@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hatchi-foto-ch Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:Poppins;
+  background:linear-gradient(#aee2ff,#fff7cc);
+  color:#444;
+  overflow-x:hidden;
+}
+
+/* ☁️ moving clouds */
+.cloud{
+  position:absolute;
+  background:white;
+  border-radius:100px;
+  opacity:.8;
+  filter:blur(3px);
+  animation:moveCloud 70s linear infinite;
+}
+.cloud:before,.cloud:after{
+  content:"";
+  position:absolute;
+  background:white;
+  border-radius:50%;
+}
+.cloud:before{width:80px;height:80px;top:-40px;left:10px;}
+.cloud:after{width:120px;height:120px;top:-60px;right:15px;}
+@keyframes moveCloud{
+  from{transform:translateX(-200px);}
+  to{transform:translateX(120vw);}
+}
+
+/* 🌊 NAVBAR */
+nav{
+  position:fixed;
+  width:100%;
+  padding:18px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(255,255,255,.5);
+  backdrop-filter:blur(10px);
+  z-index:999;
+}
+.logo{font-weight:700;font-size:26px;color:#ff9f1c;}
+nav a{margin-left:25px;text-decoration:none;color:#555;font-weight:500}
+
+/* HERO */
+.hero{
+  height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero h1{
+  font-size:64px;
+  color:#ff9f1c;
+  animation:float 4s ease-in-out infinite;
+}
+.hero p{font-size:22px;margin:20px 0;}
+@keyframes float{50%{transform:translateY(-15px);}}
+
+.btn{
+  padding:16px 35px;
+  border:none;
+  border-radius:50px;
+  font-size:18px;
+  background:linear-gradient(45deg,#ffd166,#ff9f1c);
+  color:white;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+/* section */
+section{padding:90px 70px;text-align:center;}
+.title{font-size:40px;margin-bottom:40px;}
+
+/* cards */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.card{
+  background:rgba(255,255,255,.5);
+  backdrop-filter:blur(12px);
+  padding:35px;
+  border-radius:25px;
+  box-shadow:0 15px 30px rgba(0,0,0,.12);
+  transition:.3s;
+}
+.card:hover{transform:translateY(-10px) scale(1.04);}
+
+/* notice */
+.notice{
+  max-width:900px;
+  margin:auto;
+  text-align:left;
+}
+.notice li{
+  list-style:none;
+  padding:15px;
+  margin:10px 0;
+  background:white;
+  border-radius:15px;
+}
+
+/* footer */
+footer{
+  background:#ff9f1c;
+  color:white;
+  padding:30px;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- clouds -->
+<div class="cloud" style="width:200px;height:60px;top:80px;"></div>
+<div class="cloud" style="width:260px;height:70px;top:220px;animation-delay:10s;"></div>
+
+<nav>
+  <div class="logo">Hatchi-foto-ch</div>
+  <div>
+    <a href="#">ホーム</a>
+    <a href="#">手続き</a>
+    <a href="#">FAQ</a>
+    <a href="#">お問い合わせ</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
+    <h1>Welcome Portal ☁️</h1>
+    <p>やさしく使える手続きサイト</p>
+    <button class="btn">手続きをはじめる</button>
+  </div>
+</section>
+
+<section>
+  <h2 class="title">📢 お知らせ</h2>
+  <ul class="notice">
+    <li>2026/04/01 サイト公開しました</li>
+    <li>2026/04/10 新しい手続き追加</li>
+    <li>2026/04/20 メンテナンス予定</li>
+  </ul>
+</section>
+
+<section>
+  <h2 class="title">📝 よく使う手続き</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>各種申請</h3>
+      <p>オンライン申請はこちら</p>
+    </div>
+    <div class="card">
+      <h3>証明書発行</h3>
+      <p>すぐに申請できます</p>
+    </div>
+    <div class="card">
+      <h3>予約</h3>
+      <p>来訪予約を行う</p>
+    </div>
+    <div class="card">
+      <h3>FAQ</h3>
+      <p>よくある質問を見る</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+© 2026 Hatchi-foto-ch Portal
+</footer>
+
+</body>
+</html>
